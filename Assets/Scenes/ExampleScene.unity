@@ -1377,6 +1377,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419fa4f3050929748995e6acce902437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _asteroidsPools:
+  - {fileID: 825653802}
+  - {fileID: 825653801}
+  - {fileID: 825653800}
 --- !u!1 &1598806468
 GameObject:
   m_ObjectHideFlags: 0
