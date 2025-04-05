@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private ObjectPool[] _asteroidsPools = new ObjectPool[3];
 
+    [SerializeField]
+    private ObjectPool[] _projectilePools = new ObjectPool[2];
+
     private bool _isGameRunning = true;
 
 
