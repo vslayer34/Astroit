@@ -46,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(InputValue value)
     {
         _moveForce = value.Get<float>() * _movementSpeed;
-        Debug.Log(value.Get<float>());
         _exhaustSpriteRenderer.color = new Color(_exhaustSpriteRenderer.color.r, _exhaustSpriteRenderer.color.g, _exhaustSpriteRenderer.color.b, value.Get<float>());
     }
 
