@@ -1407,6 +1407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419fa4f3050929748995e6acce902437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ExplosionPool>k__BackingField: {fileID: 84205269}
   _asteroidsPools:
   - {fileID: 825653802}
   - {fileID: 825653801}
@@ -6780,6 +6781,8 @@ GameObject:
   - component: {fileID: 5946969974589823497}
   - component: {fileID: 5946969974589823503}
   - component: {fileID: 5946969974589823504}
+  - component: {fileID: 5946969974589823506}
+  - component: {fileID: 5946969974589823505}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6829,6 +6832,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 203d87655da821a438e2bdc04dbe9baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5946969974589823505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5946969974589823500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c235993fe50d9488ac074bf19238ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5946969974589823506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5946969974589823500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68dcc2592e43cb449e88eae570f5bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
