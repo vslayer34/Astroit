@@ -19,11 +19,12 @@ public class Weapon : MonoBehaviour
 
     // Signal Methods------------------------------------------------------------------------------
 
-    public void OnFire(InputValue value)
+    public void OnFire()
     {
+        Debug.Log("Fire Fire Fire!!!");
         GameObject projectile = GameManager.Instance.ProjectilePools[_playerNumber].GetPoolObject();
 
-        projectile.transform.position = transform.position + (_offset * transform.up);
-        projectile.transform.rotation = transform.rotation;
+        projectile.transform.SetPositionAndRotation(transform.position + (_offset * transform.up), transform.rotation);
+        projectile.SetActive(true);
     }
 }
