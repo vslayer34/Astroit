@@ -54,4 +54,8 @@ public class GameManager : MonoBehaviour
         var newAsteroid = _asteroidsPools[i].GetPoolObject();
         newAsteroid.SetActive(true);
     }
+
+    // Getters & Setters---------------------------------------------------------------------------
+
+    public ObjectPool[] ProjectilePools { get => _projectilePools; }
 }
