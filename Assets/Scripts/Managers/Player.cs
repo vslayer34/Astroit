@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
             if (_damagableScript.Damage(200.0f))
             {
                 _lives--;
+                GameManager.Instance.ReportPlayerDeath(gameObject, PlayerNumber, _lives);
                 // Player dies
             }
         }

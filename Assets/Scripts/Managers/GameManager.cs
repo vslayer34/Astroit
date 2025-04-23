@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
 
     private bool _isGameRunning = true;
 
+    [SerializeField]
+    private float _SpawnTime = 2.0f;
+
 
 
     // Game Loop Methods---------------------------------------------------------------------------
@@ -53,6 +56,33 @@ public class GameManager : MonoBehaviour
 
         var newAsteroid = _asteroidsPools[i].GetPoolObject();
         newAsteroid.SetActive(true);
+    }
+
+    public void ReportPlayerDeath(GameObject player, int playerNumber, int lives)
+    {
+        // Update UI
+
+        if (lives > 0)
+        {
+            StartCoroutine(RespawnPlayer(player));
+            return;
+        }
+        else if (lives <= 0)
+        {
+            Player.totalPlayersNumber--;
+
+            if (Player.totalPlayersNumber == 0)
+            {
+                _isGameRunning = false;
+            }
+        }
+    }
+
+    private IEnumerator RespawnPlayer(GameObject player)
+    {
+        yield return new WaitForSeconds(_SpawnTime);
+        player.transform.position = Vector2.zero;
+        player.SetActive(true);
     }
 
     // Getters & Setters---------------------------------------------------------------------------
