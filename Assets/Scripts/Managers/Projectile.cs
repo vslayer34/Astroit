@@ -51,6 +51,10 @@ public class Projectile : MonoBehaviour
                     if (damagable.Damage(_damagedAmount))
                     {
                         // Destroy the asteroid
+                        if (_hitArray[i].TryGetComponent<Asteroid>(out Asteroid asteroid))
+                        {
+                            GameManager.Instance.UpdatePlayersScore(PlayerNumber, asteroid.PointValue);
+                        }
                     }
 
                     AudioManager.Instance.PlaySFX(_impactAudio);

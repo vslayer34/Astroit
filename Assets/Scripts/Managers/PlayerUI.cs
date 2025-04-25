@@ -43,4 +43,10 @@ public class PlayerUI : MonoBehaviour
 
         _livesText.text = livesText;
     }
+
+
+    public void UpdateScoreText(int score)
+    {
+        _scoreText.text = string.Format("{0:000000}", score);
+    }
 }

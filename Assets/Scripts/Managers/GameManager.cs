@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private PlayerUI[] _playersUI;
 
+    private int[] _playersScore = new int[2];
+
 
 
     // Game Loop Methods---------------------------------------------------------------------------
@@ -87,6 +89,13 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(_SpawnTime);
         player.transform.position = Vector2.zero;
         player.SetActive(true);
+    }
+
+
+    public void UpdatePlayersScore(int playerNumber, int newScore)
+    {
+        _playersScore[playerNumber] += newScore;
+        _playersUI[playerNumber].UpdateScoreText(_playersScore[playerNumber]);
     }
 
     // Getters & Setters---------------------------------------------------------------------------
