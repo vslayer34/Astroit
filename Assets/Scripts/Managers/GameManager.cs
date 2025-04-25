@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _SpawnTime = 2.0f;
 
+    [SerializeField]
+    private PlayerUI[] _playersUI;
+
 
 
     // Game Loop Methods---------------------------------------------------------------------------
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
     public void ReportPlayerDeath(GameObject player, int playerNumber, int lives)
     {
         // Update UI
+        _playersUI[playerNumber].UpdateLivesUI(lives);
 
         if (lives > 0)
         {

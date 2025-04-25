@@ -318,6 +318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 324344192}
+  - component: {fileID: 324344193}
   m_Layer: 5
   m_Name: Player One
   m_TagString: Untagged
@@ -346,6 +347,20 @@ RectTransform:
   m_AnchoredPosition: {x: 10, y: -10}
   m_SizeDelta: {x: 202.8, y: 97}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &324344193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324344191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3697e465f9687c4ab4d5743c178f665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreText: {fileID: 1598806470}
+  _livesText: {fileID: 1930072110}
 --- !u!1 &411645232
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +718,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 638842499}
+  - component: {fileID: 638842500}
   m_Layer: 5
   m_Name: Player Two
   m_TagString: Untagged
@@ -731,6 +747,20 @@ RectTransform:
   m_AnchoredPosition: {x: 10, y: -10}
   m_SizeDelta: {x: 202.79999, y: 97}
   m_Pivot: {x: 1, y: 1}
+--- !u!114 &638842500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638842498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3697e465f9687c4ab4d5743c178f665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreText: {fileID: 989250206}
+  _livesText: {fileID: 2001140053}
 --- !u!1 &669222778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1415,6 +1445,10 @@ MonoBehaviour:
   _projectilePools:
   - {fileID: 192942946}
   - {fileID: 192942945}
+  _SpawnTime: 2
+  _playersUI:
+  - {fileID: 324344193}
+  - {fileID: 638842500}
 --- !u!1 &1598806468
 GameObject:
   m_ObjectHideFlags: 0

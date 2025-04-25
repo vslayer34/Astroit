@@ -27,7 +27,6 @@ public class Damagable : MonoBehaviour
 
         if (_health <= 0.0f)
         {
-            Debug.Log(GameManager.Instance.ExplosionPool);
             var explosion = GameManager.Instance.ExplosionPool.GetPoolObject();
             explosion.transform.position = transform.position;
             explosion.transform.localScale = transform.localScale;

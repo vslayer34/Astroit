@@ -21,7 +21,6 @@ public class Weapon : MonoBehaviour
 
     public void OnFire()
     {
-        Debug.Log("Fire Fire Fire!!!");
         GameObject projectile = GameManager.Instance.ProjectilePools[_playerNumber].GetPoolObject();
 
         projectile.transform.SetPositionAndRotation(transform.position + (_offset * transform.up), transform.rotation);
