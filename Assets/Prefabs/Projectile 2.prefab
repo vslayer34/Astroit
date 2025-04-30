@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: f7baa33c7425840da8ae60164ff4ca60, type: 3}
     - target: {fileID: 6655486501838376209, guid: affd1370f5ce0234f917c324c167b503, type: 3}
       propertyPath: <PlayerNumber>k__BackingField
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7859505884063537300, guid: affd1370f5ce0234f917c324c167b503, type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,23 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private PlayerUI[] _playersUI;
 
+
+
+    [SerializeField, Header("Player Configs")]
+    private bool _isTwoPlayerGame = true;
+
+    [SerializeField]
+    private float _playerSpawnOffset = 3.0f;
+
+    [SerializeField]
+    private GameObject _playerPrefab;
+
+    [SerializeField]
+    private Color[] _playerColors = new Color[2];
+
+    [SerializeField]
+    private GameObject[] _playerWinScreen = new GameObject[2];
+
     private int[] _playersScore = new int[2];
 
 
@@ -42,6 +60,27 @@ public class GameManager : MonoBehaviour
     private IEnumerator Start()
     {
         // start Game
+        Player.totalPlayersNumber = 0;
+        int playersNum = _isTwoPlayerGame ? 2 : 1;
+
+        for (int i = 0; i < playersNum; i++)
+        {
+            GameObject createdPlayer = Instantiate(_playerPrefab);
+
+            if (_isTwoPlayerGame)
+            {
+                float xOffset = (i == 0) ? -1 * _playerSpawnOffset : _playerSpawnOffset;
+                createdPlayer.transform.position = Vector2.right * xOffset;
+            }
+            else
+            {
+                createdPlayer.transform.position = Vector2.zero;
+            }
+
+            createdPlayer.GetComponentInChildren<SpriteRenderer>().color = _playerColors[i];
+            _playersUI[i].UpdateUIColor(_playerColors[i]);
+            _playersUI[i].gameObject.SetActive(true);
+        }
 
         // Game Loop
         while (_isGameRunning)
@@ -51,6 +90,24 @@ public class GameManager : MonoBehaviour
         }
 
         // End Game
+
+        if (_isTwoPlayerGame)
+        {
+            int highestScore = 0;
+            int winningPlayer = 0;
+
+            for (int i = 0; i < playersNum; i++)
+            {
+                if (_playersScore[i] > highestScore)
+                {
+                    highestScore = _playersScore[i];
+                    winningPlayer = i;
+                }
+            }
+
+            _playerWinScreen[winningPlayer].GetComponent<Image>().color = _playerColors[winningPlayer];
+            _playerWinScreen[winningPlayer].SetActive(true);
+        }
     }
 
     // Member Methods------------------------------------------------------------------------------

@@ -51,9 +51,9 @@ public class Projectile : MonoBehaviour
                     if (damagable.Damage(_damagedAmount))
                     {
                         // Destroy the asteroid
-                        if (_hitArray[i].TryGetComponent<Asteroid>(out Asteroid asteroid))
+                        if (_hitArray[i].TryGetComponent(out PointsHolder points))
                         {
-                            GameManager.Instance.UpdatePlayersScore(PlayerNumber, asteroid.PointValue);
+                            GameManager.Instance.UpdatePlayersScore(PlayerNumber, points.PointValue);
                         }
                     }
 

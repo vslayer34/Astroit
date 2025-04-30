@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out Asteroid asteroid))
+        if (collision.gameObject.CompareTag("Asteroid"))
         {
             if (_damagableScript.Damage(200.0f))
             {
